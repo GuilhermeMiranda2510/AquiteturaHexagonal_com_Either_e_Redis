@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DomainHexagonal.Entities;
+using DomainHexagonal.Entities.Response;
 using DomainHexagonal.Repositories;
 using DomainHexagonal.Utilities;
 using System.Data;
@@ -33,7 +34,15 @@ namespace InfraHexagonal.Repositories
 
             if (user == null)
             {
-                return Either<string, User>.FromLeft("Usuário não encontrado");
+                return Either<string, User>.FromLeft("Usuário não econtrado!");
+                //return Either<ErrorResponse, User>.FromLeft(
+                //    new ErrorResponse(
+
+                //        statusCode: 404,
+                //        message: "Usuário não encontrado",
+                //        details: $"No user found with CPF {cpf}",
+                //        errorCode: "USER_NOT_FOUND"
+                //        ));
             }
 
             return Either<string, User>.FromRight(user);

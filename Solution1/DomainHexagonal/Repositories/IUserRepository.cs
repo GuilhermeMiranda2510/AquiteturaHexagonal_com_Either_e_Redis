@@ -1,4 +1,5 @@
 ﻿using DomainHexagonal.Entities;
+using DomainHexagonal.Entities.Response;
 using DomainHexagonal.Utilities;
 
 namespace DomainHexagonal.Repositories

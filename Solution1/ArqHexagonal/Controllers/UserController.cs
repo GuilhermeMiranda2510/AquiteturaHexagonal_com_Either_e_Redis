@@ -1,6 +1,7 @@
 ﻿using ApplicationHexagonal.Interfaces;
 using ApplicationHexagonal.Services;
 using DomainHexagonal.Entities;
+using DomainHexagonal.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
@@ -39,10 +40,18 @@ namespace ArqHexagonal.Controllers
         }
           
         [HttpGet("{cpf}")]
-        public async Task<ActionResult<User>> Get(string cpf)
+        public async Task<IActionResult> Get(string cpf)
         {
             var result = await _userService.GetUserByCPFAsync(cpf);
-            if (result.IsLeft) 
+
+            //  return result.Match<>(
+            //        Left: error => StatusCode(error.StatusCode, error),
+            //        Right: user => Ok(user)
+            //);
+
+
+            //ASSIM FUNCIONA TAMBÉM.
+            if (result.IsLeft)
                 return NotFound(result.Left);
 
             return Ok(result.Right);
