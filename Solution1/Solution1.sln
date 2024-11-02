@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8EEAB1EB-120E-4B35-BBB4-1F59D21C22EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{6035C36E-CE69-4F3A-ABCC-507CE03C53FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driving", "Driving", "{D283E247-6D59-461C-A09F-1776DCFC8128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArqHexagonal", "ArqHexagonal\ArqHexagonal.csproj", "{661DE9BA-3364-4156-8C7B-E58E7C5F54DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Driven", "Driven", "{1AEE2605-3BD9-4C48-9D7A-3B16C3EAA64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainHexagonal", "DomainHexagonal\DomainHexagonal.csproj", "{CE93D122-73B5-47E9-9FF3-9669C4AC0C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationHexagonal", "ApplicationHexagonal\ApplicationHexagonal.csproj", "{03342F75-A175-4E9A-A5DC-7DB5719699BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfraHexagonal", "InfraHexagonal\InfraHexagonal.csproj", "{9110DB38-809E-4D21-8875-A26A03BD7EF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Adapters", "Adapters", "{A14CC2D9-EB1C-4EB8-8B47-6196685E5154}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6158277E-962D-4EA6-A71E-9B6C47DED7E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{661DE9BA-3364-4156-8C7B-E58E7C5F54DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661DE9BA-3364-4156-8C7B-E58E7C5F54DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661DE9BA-3364-4156-8C7B-E58E7C5F54DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661DE9BA-3364-4156-8C7B-E58E7C5F54DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE93D122-73B5-47E9-9FF3-9669C4AC0C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE93D122-73B5-47E9-9FF3-9669C4AC0C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE93D122-73B5-47E9-9FF3-9669C4AC0C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE93D122-73B5-47E9-9FF3-9669C4AC0C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03342F75-A175-4E9A-A5DC-7DB5719699BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03342F75-A175-4E9A-A5DC-7DB5719699BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03342F75-A175-4E9A-A5DC-7DB5719699BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03342F75-A175-4E9A-A5DC-7DB5719699BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9110DB38-809E-4D21-8875-A26A03BD7EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9110DB38-809E-4D21-8875-A26A03BD7EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9110DB38-809E-4D21-8875-A26A03BD7EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9110DB38-809E-4D21-8875-A26A03BD7EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EEAB1EB-120E-4B35-BBB4-1F59D21C22EB} = {6158277E-962D-4EA6-A71E-9B6C47DED7E1}
+		{6035C36E-CE69-4F3A-ABCC-507CE03C53FF} = {6158277E-962D-4EA6-A71E-9B6C47DED7E1}
+		{D283E247-6D59-461C-A09F-1776DCFC8128} = {A14CC2D9-EB1C-4EB8-8B47-6196685E5154}
+		{661DE9BA-3364-4156-8C7B-E58E7C5F54DC} = {D283E247-6D59-461C-A09F-1776DCFC8128}
+		{1AEE2605-3BD9-4C48-9D7A-3B16C3EAA64A} = {A14CC2D9-EB1C-4EB8-8B47-6196685E5154}
+		{CE93D122-73B5-47E9-9FF3-9669C4AC0C97} = {8EEAB1EB-120E-4B35-BBB4-1F59D21C22EB}
+		{03342F75-A175-4E9A-A5DC-7DB5719699BA} = {6035C36E-CE69-4F3A-ABCC-507CE03C53FF}
+		{9110DB38-809E-4D21-8875-A26A03BD7EF3} = {1AEE2605-3BD9-4C48-9D7A-3B16C3EAA64A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {708D1556-49CA-4886-BAE2-83762FC2220C}
+	EndGlobalSection
+EndGlobal
