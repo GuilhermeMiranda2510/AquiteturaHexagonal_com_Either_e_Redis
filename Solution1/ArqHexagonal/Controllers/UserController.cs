@@ -12,12 +12,12 @@ namespace ArqHexagonal.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
         private readonly ICacheServices _cache;
 
         //O controller recebe uma requisição HTTP e chama o serviço de aplicação (UserService) para recuperar um usuário.
 
-        public UserController(ICacheServices cache, UserService userService)
+        public UserController(ICacheServices cache, IUserService userService)
         {
             _userService = userService;
             _cache = cache; 
@@ -40,21 +40,21 @@ namespace ArqHexagonal.Controllers
         }
           
         [HttpGet("{cpf}")]
-        public async Task<IActionResult> Get(string cpf)
+        public async Task<ActionResult> Get(string cpf)
         {
             var result = await _userService.GetUserByCPFAsync(cpf);
 
-            //  return result.Match<>(
-            //        Left: error => StatusCode(error.StatusCode, error),
-            //        Right: user => Ok(user)
-            //);
+            return result.Match(
+                  LEFT: error => StatusCode(error.StatusCode, error),
+                  RIGHT: user => Ok(user)
+          );
 
 
             //ASSIM FUNCIONA TAMBÉM.
-            if (result.IsLeft)
-                return NotFound(result.Left);
+            //if (result.IsLeft)
+            //    return NotFound(result.Left);
 
-            return Ok(result.Right);
+            //return Ok(result.Right);
         }
 
         [HttpPost]

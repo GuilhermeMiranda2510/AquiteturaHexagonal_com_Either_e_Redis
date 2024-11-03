@@ -13,7 +13,7 @@ namespace DomainHexagonal.Entities.Response
         public string Details { get; set; }  // Detalhes adicionais (opcional)
         public string ErrorCode { get; set; } // Código de erro específico do domínio (opcional)
 
-        public ErrorResponse(int statusCode, string message, string details = null, string errorCode = null)
+        public ErrorResponse(int statusCode, string message, string details, string errorCode)
         {
             StatusCode = statusCode;
             Message = message;

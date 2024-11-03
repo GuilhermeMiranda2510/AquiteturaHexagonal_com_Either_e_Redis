@@ -4,10 +4,11 @@ using DomainHexagonal.Utilities;
 using System.Diagnostics.Metrics;
 using System;
 using DomainHexagonal.Entities.Response;
+using ApplicationHexagonal.Interfaces;
 
 namespace ApplicationHexagonal.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         //O serviço encapsula a lógica de aplicação e chama o repositório para obter os dados.
 
@@ -18,7 +19,7 @@ namespace ApplicationHexagonal.Services
             _userRepository = userRepository;
         }
 
-        public Task<Either<string, User>> GetUserByCPFAsync(string cpf) => _userRepository.GetByCPFAsync(cpf);
+        public Task<Either<ErrorResponse, User>> GetUserByCPFAsync(string cpf) => _userRepository.GetByCPFAsync(cpf);
         public Task<IEnumerable<User>> GetAllUsersAsync() => _userRepository.GetAllAsync();
         public Task AddUserAsync(User user) => _userRepository.AddAsync(user);
         public Task UpdateUserAsync(User user) => _userRepository.UpdateAsync(user);

@@ -27,25 +27,25 @@ namespace InfraHexagonal.Repositories
             _dbConnection = dbConnection;
         }
 
-        public async Task<Either<string, User>> GetByCPFAsync(string cpf)
+        public async Task<Either<ErrorResponse, User>> GetByCPFAsync(string cpf)
         {
             var sql = $@"SELECT * FROM Users WHERE CPF = {cpf}";
             var user = await _dbConnection.QueryFirstOrDefaultAsync<User>(sql, new { CPF = cpf });
 
             if (user == null)
             {
-                return Either<string, User>.FromLeft("Usuário não econtrado!");
-                //return Either<ErrorResponse, User>.FromLeft(
-                //    new ErrorResponse(
+               // return Either<string, User>.FromLeft("Usuário não econtrado!");
+                return Either<ErrorResponse, User>.FromLeft(
+                    new ErrorResponse(
 
-                //        statusCode: 404,
-                //        message: "Usuário não encontrado",
-                //        details: $"No user found with CPF {cpf}",
-                //        errorCode: "USER_NOT_FOUND"
-                //        ));
+                        statusCode: 404,
+                        message: "Usuário não encontrado",
+                        details: $"Não existe usário com o {cpf} cadastrado no banco de dados.",
+                        errorCode: "USER_NOT_FOUND"
+                        ));
             }
 
-            return Either<string, User>.FromRight(user);
+            return Either<ErrorResponse, User>.FromRight(user);
         }
 
         public async Task<IEnumerable<User>> GetAllAsync()

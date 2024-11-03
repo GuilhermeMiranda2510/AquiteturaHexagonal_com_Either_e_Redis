@@ -22,7 +22,7 @@ builder.Services.AddStackExchangeRedisCache(o =>
 
 // Configura as injeções de dependência para repositório e serviço
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Adiciona suporte para controladores
 builder.Services.AddControllers();
